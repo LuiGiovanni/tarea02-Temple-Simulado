@@ -5,6 +5,14 @@ Tarea 2: Algoritmos de búsquedas directas
 Descripción
 ------------
 
+Para esta tarea, vamos a entrenarnos primero en el uso y análisis del algortmo de temple simulado,
+en un problema de juguete como es el clásico problema de las $n$ reinas.
+
+Una vez entendido, vamos a usar el algoritmo para generar una representación visual de un gráfo
+no dirigido, a partir de su definición por vértices y aristas. Lo más fácil es generar un dibujo de
+forma aleatoria, pero lo que queremos es un dibujo del gráfo que sea *estético*.
+
+
 Esta tarea tiene como objetivo el entrenamiento para establecer con
 claridad una función de costo de una apreciación subjetiva, así como
 probar y ajustar un algoritmo de temple (recocido) simulado.
@@ -19,12 +27,12 @@ Los puntos importantes a desarrollar en la tarea son:
 
 2. Desarrollar una forma eficiente de generar un vecino aleatorio bien
    adaptado para ser usado con el algoritmo de temple simulado.
-  
-3. Implementar un costo a partir de una descripcion de lo que se busca.
 
-4. Utilizar la creatividad para desarrollar un criterio para algo tan subjetivo como la estética.
+3. Establecer criterios para la medición de algo tan subjetivo como es la apreciación estética.
 
-4. Probar y ajustar el temple simulado condiferentes calendarizaciones.
+4. Implementar dichos criterios para ser usados dentro del algortimo de temple simulado.
+
+5. Probar y ajustar el temple simulado con diferentes funciones de calendarización.
 
 
 La tarea consta de 3 archivos:
