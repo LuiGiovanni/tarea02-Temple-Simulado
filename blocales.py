@@ -12,7 +12,6 @@ __author__ = 'juliowaissman'
 
 from itertools import takewhile
 from math import exp
-from math import log2
 from random import random
 
 

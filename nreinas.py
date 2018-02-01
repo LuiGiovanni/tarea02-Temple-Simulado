@@ -34,6 +34,16 @@ class ProblemaNreinas(blocales.Problema):
         shuffle(estado)
         return tuple(estado)
 
+    @staticmethod
+    def swap(x, i, j):
+        """
+        Intercambia los elemento i y j de la lista x
+
+        """
+        if not isinstance(x, type([1, 2])):
+            raise TypeError("Este método solo se puede hacer con listas")
+        x[i], x[j] = x[j], x[i]
+
     def vecinos(self, estado):
         """
         Generador vecinos de un estado, todas las 2 permutaciones
@@ -43,11 +53,11 @@ class ProblemaNreinas(blocales.Problema):
         @return: un generador de estados vecinos.
 
         """
-        edo_lista = list(estado)
+        x = list(estado)
         for i, j in combinations(range(self.n), 2):
-            edo_lista[i], edo_lista[j] = edo_lista[j], edo_lista[i]
-            yield tuple(edo_lista)
-            edo_lista[i], edo_lista[j] = edo_lista[j], edo_lista[i]
+            self.swap(x, i, j)
+            yield tuple(x)
+            self.swap(x, i, j)
 
     def vecino_aleatorio(self, estado):
         """
@@ -61,7 +71,7 @@ class ProblemaNreinas(blocales.Problema):
         """
         vecino = list(estado)
         i, j = sample(range(self.n), 2)
-        vecino[i], vecino[j] = vecino[j], vecino[i]
+        self.swap(vecino, i, j)
         return tuple(vecino)
 
     def costo(self, estado):
@@ -73,8 +83,8 @@ class ProblemaNreinas(blocales.Problema):
         @return: Un valor numérico, mientras más pequeño, mejor es el estado.
 
         """
-        return sum([1 for (i, j) in combinations(range(self.n), 2)
-                    if abs(estado[i] - estado[j]) == abs(i - j)])
+        return sum((1 for (i, j) in combinations(range(self.n), 2)
+                    if abs(estado[i] - estado[j]) == abs(i - j)))
 
 
 def prueba_descenso_colinas(problema=ProblemaNreinas(8), repeticiones=10):
@@ -116,8 +126,8 @@ if __name__ == "__main__":
     # y hasta cuantas reinas puede resolver en un tiempo aceptable?
     #
     # En general para obtener mejores resultados del temple simulado,
-    # es necesario utilizarprobar diferentes metdos de
-    # calendarización, prueba al menos otros dis métodos sencillos de
+    # es necesario probar diferentes metdos de
+    # calendarización, prueba al menos otros dos métodos sencillos de
     # calendarización y ajusta los parámetros para que funcionen de la
     # mejor manera
     #

@@ -12,7 +12,7 @@ gráfos por computadora pero da una idea de la utilidad de los métodos de
 optimización en un problema divertido.
 
 Para realizar este problema es necesario contar con el módulo Pillow
-instalado (en Anaconda se instala por default. Si no se encuentr instalado, 
+instalado (en Anaconda se instala por default. Si no se encuentr instalado,
 desde la termnal se puede instalar utilizando
 
 $pip install pillow
@@ -64,7 +64,7 @@ class problema_grafica_grafo(blocales.Problema):
         Un estado para este problema de define como:
 
            s = [s(1), s(2),..., s(2*len(vertices))],
- 
+
         en donde s(i) \in {10, 11, ..., self.dim - 10} es la posición
         en x del nodo i/2 si i es par, o la posicion en y
         del nodo (i-1)/2 si i es non y(osease las parejas (x,y)).
@@ -291,7 +291,8 @@ class problema_grafica_grafo(blocales.Problema):
 
     def estado2dic(self, estado):
         """
-        Convierte el estado en forma de tupla a un estado en forma de diccionario
+        Convierte el estado en forma de tupla a un estado en forma
+        de diccionario
 
         @param: Una tupla con las posiciones (x1, y1, x2, y2, ...)
 
