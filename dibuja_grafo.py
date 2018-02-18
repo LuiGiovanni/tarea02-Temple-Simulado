@@ -42,7 +42,7 @@ class problema_grafica_grafo(blocales.Problema):
         @param aristas: Lista con pares de vertices, los cuales
                         definen las aristas.
         @param dimension_imagen: Entero con la dimension de la imagen
-                                 en pixeles (cuadrada por facilidad).
+                                 en pixeles (cuadrada por facilidad)
         """
         self.vertices = vertices
         self.aristas = aristas
